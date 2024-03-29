@@ -1,0 +1,337 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-image: linear-gradient(to right, rgb(58, 179, 235), rgb(212, 248, 83), rgb(252, 102, 152));
+  background-size: 300% auto; /* Increase background size to accommodate movement */
+  animation: moveGradient 5s infinite alternate; /* Animate infinitely */
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-image: linear-gradient(to right, rgb(58, 179, 235), rgb(212, 248, 83), rgb(252, 102, 152));
+  background-size: 300% auto; /* Increase background size to accommodate movement */
+  animation: moveGradient 5s infinite alternate; /* Animate infinitely */
+  font-size: xxx-large;
+  text-align: center;
+}
+
+@keyframes moveGradient {
+  0% {
+      background-position: 0% 50%; /* Start from left */
+  }
+  100% {
+      background-position: 100% 50%; /* Move to right */
+  }
+}
+
+
+.calculator {
+  width: 600px;
+  margin: 60px auto;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background-color: rgba(95, 95, 95, 0.39);
+}
+
+.calculator input[type="text"] {
+  width: calc(37%);
+  padding: 10px;
+  /* padding-left: 170px; Adjust as needed */
+  text-indent: 0; /* Add this line */
+  margin-bottom: 10px;
+  font-size: 25px;
+  border: 2.5px solid #6d6a6a;
+  border-radius: 10px;
+  color: rgb(250, 40, 40);
+  background-color: #ebf593;
+  font-weight: bold;
+  position: fixed;
+  top: 90px; /* Adjust top position as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+}
+
+.calculator button {
+  width: calc(20%);
+  /* Set the width to half of the container minus some spacing */
+  margin-bottom: -30px;
+  margin-top: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expand-button, .shape-buttons button, .Mesurement-button button, .Weight-button button {
+  min-width: 333px; /* Adjust as needed */
+  text-align: center;
+  padding: 8px 12px; /* Adjust padding for better spacing */
+  /* Add other styling properties as needed */
+}
+
+.shape-buttons button, .Mesurement-button button, .Weight-button button {
+  background-color: rgb(253, 251, 107);
+  min-width: 200px;
+  padding: calc(auto);
+}
+
+.cls-bt {
+  background-color: rgb(245, 53, 53);
+  color: #000000;
+  min-width: auto; /* Adjust as needed */
+}
+
+.calculator button:hover {
+  background-color: #f0f0f096;
+}
+
+.calculator .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator .newrow {
+  /* align-items: center;
+  justify-content: center; */
+  width: calc(150%);
+}
+
+.shape-buttons {
+  display: flex;
+  flex-direction: column;
+  /* Arrange buttons vertically */
+}
+
+.Mesurement-button {
+  display: flex;
+  flex-direction: column;
+  /* Arrange buttons vertically */
+}
+
+.Weight-button {
+  display: flex;
+  flex-direction: column;
+  /* Arrange buttons vertically */
+}
+
+.input-container {
+  position: absolute;
+  display: inline-block;
+}
+
+.input-container input {
+  padding-right: 30px;
+  /* Space for the clear button */
+}
+
+.clear-button {
+  position: fixed;
+  width: 50%;
+  top: -22px;
+  left: 19.1179% !important;
+  /* right: 5px; */
+  /* Adjust as needed */
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  background-color: transparent;
+  color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.clear-button {
+  animation: blink 1s infinite;
+  /* Adjust animation duration as needed */
+}
+
+footer {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: linear-gradient(to right, rgb(58, 179, 235), rgb(212, 248, 83), rgb(252, 102, 152));
+  }
+
+  .calculator {
+    width: 90%;
+    /* Adjust width to 90% of the viewport width */
+    margin: 60px auto;
+    /* Adjust margin for better centering */
+    padding: 20px;
+    /* Reduce padding for smaller screens */
+    border-radius: 20px;
+    /* Decrease border radius */
+    /* width: 600px;
+    margin: 60px auto; */
+    border: 1px solid #000000;
+    /* border-radius: 40px; */
+    /* padding: 50px; */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: grey;
+  }
+
+  .calculator input[type="text"] {
+    width: auto;
+    padding: 3px;
+    margin-bottom: 10px;
+    margin-left: -55px;
+    font-size: 25px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    color: rgb(250, 40, 40);
+    background-color: #ebf593;
+    font-weight: bold;
+    position: fixed;
+    top: 90px;
+    /* Adjust top position as needed */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+  }
+
+  .calculator button {
+    width: calc(19%);
+    /* Set the width to half of the container minus some spacing */
+    margin-bottom: -30px;
+    margin-top: 60px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .expand-button, .shape-buttons button, .Mesurement-button button {
+    min-width: 333px; /* Adjust as needed */
+    text-align: center;
+    padding: 8px 12px; /* Adjust padding for better spacing */
+    /* Add other styling properties as needed */
+  }
+
+  .shape-buttons button, .Mesurement-button button {
+    background-color: rgb(253, 251, 107);
+    min-width: 200px;
+    padding: calc(auto);
+  }
+
+  .cls-bt {
+    background-color: rgb(245, 53, 53);
+    color: #000000;
+    min-width: auto; /* Adjust as needed */
+  }
+
+  .calculator .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .calculator button:hover {
+    background-color: #f0f0f06b;
+  }
+
+  .calculator .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shape-buttons {
+    display: flex;
+    flex-direction: column;
+    /* Arrange buttons vertically */
+  }
+
+  .Mesurement-button {
+    display: flex;
+    flex-direction: column;
+    /* Arrange buttons vertically */
+  }
+
+  .input-container {
+    position: absolute;
+    display: inline-block;
+  }
+
+  .input-container input {
+    padding-right: 30px;
+    /* Space for the clear button */
+  }
+
+  .clear-button {
+    position: fixed;
+    top: -22px;
+    left: 5% !important;
+    /* right: 5px; */
+    /* Adjust as needed */
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .clear-button {
+    animation: blink 1s infinite;
+    /* Adjust animation duration as needed */
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+}

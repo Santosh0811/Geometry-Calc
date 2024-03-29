@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceometry Calculator</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+  <div class="calculator">
+
+    <div class="input-container">
+      <input type="text" id="display" disabled>
+      <!-- <button class="clear-button" onclick="clearDisplay()">CLEAR</button> -->
+    </div>
+    <div class="row">
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button onclick="calculate('+')">+</button>
+    </div>
+    <div class="row">
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button onclick="calculate('-')">-</button>
+    </div>
+    <div class="row">
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button onclick="calculate('*')">*</button>
+    </div>
+    <div class="row">
+      <button class="cls-bt" onclick="clearDisplay()">CLS</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="calculate('/')">/</button>
+      <button onclick="calculate('sqrt')">√</button>
+    </div>
+
+    <div class="row">
+      <button onclick="backspace()">DEL</button>
+      <button onclick="calculate('.')">.</button>
+      <button onclick="calculate(Math.PI)">π</button>
+      <button onclick="calculate('=')">=</button>
+  </div>
+
+    <div class="row newrow">
+      <button class="expand-button" onclick="toggleShapeButtons()">Area of Shapes</button>
+      <div class="shape-buttons hidden">
+        <!-- Group 1: Area of Circle, Square, Triangle, Rectangle -->
+        <button onclick="calculate('aoc')">Area of Circle</button>
+        <button onclick="calculate('aos')">Area of Square</button>
+        <button onclick="calculate('aot')">Area of Triangle</button>
+        <button onclick="calculate('aor')">Area of Rectangle</button>
+        <!-- </div>
+      
+      <div class="shape-buttons"> -->
+        <!-- Group 2: Area of Trapezium, Parallelogram, Ellipse, Rhombus -->
+        <button onclick="calculate('aotrap')">Area of Trapezium</button>
+        <button onclick="calculate('aop')">Area of Parallelogram</button>
+        <button onclick="calculate('aoe')">Area of Ellipse</button>
+        <button onclick="calculate('aorhom')">Area of Rhombus</button>
+      </div>
+    </div>
+
+
+
+    <div class="row newrow">
+      <button class="expand-button" onclick="togglemesurementButtons()">Mesurements</button>
+      <div class="Mesurement-button hidden">
+        <button onclick="calculate('mmcm')">MilliMetre to CentiMeter</button>
+        <button onclick="calculate('mmin')">MilliMetre to Inch</button>
+        <button onclick="calculate('mmmt')">MilliMetre to Meter</button>
+        <button onclick="calculate('mmft')">MilliMetre to Foot</button>
+        <!-- </div>
+
+      <div class="shape-buttons"> -->
+        <button onclick="calculate('cmmm')">CentiMeter to MilliMetre</button>
+        <button onclick="calculate('cmin')">CentiMeter to Inch</button>
+        <button onclick="calculate('cmmt')">CentiMeter to Meter</button>
+        <button onclick="calculate('cmft')">CentiMeter to Foot</button>
+        <!-- </div>
+
+      <div class="shape-buttons"> -->
+        <button onclick="calculate('inmm')">Inch to MilliMetre</button>
+        <button onclick="calculate('incm')">Inch to CentiMeter</button>
+        <button onclick="calculate('inmt')">Inch to Meter</button>
+        <button onclick="calculate('inft')">Inch to Foot</button>
+        <!-- </div>
+
+      <div class="shape-buttons"> -->
+        <button onclick="calculate('mtmm')">Meter to MilliMetre</button>
+        <button onclick="calculate('mtcm')">Meter to CentiMeter</button>
+        <button onclick="calculate('mtin')">Meter to Inch</button>
+        <button onclick="calculate('mtft')">Meter to Foot</button>
+        <!-- </div>
+
+      <div class="shape-buttons"> -->
+        <button onclick="calculate('ftinmt')">Foot & Inch to Meter</button>
+        <button onclick="calculate('ftmm')">Foot to MilliMetre</button>
+        <button onclick="calculate('ftcm')">Foot to CentiMeter</button>
+        <button onclick="calculate('ftin')">Foot to Inch</button>
+        <button onclick="calculate('ftmt')">Foot to Meter</button>
+        <!-- </div>
+
+      <div class="shape-buttons"> -->
+        <button onclick="calculate('kmmt')">KiloMeter to Meter</button>
+        <button onclick="calculate('kmmil')">KiloMeter to Miles</button>
+        <button onclick="calculate('mtkm')">Meter to KiloMeter</button>
+        <button onclick="calculate('mtmil')">Meter to Miles</button>
+        <button onclick="calculate('milkm')">Miles to KiloMeter</button>
+        <button onclick="calculate('milmt')">Miles to Meter</button>
+      </div>
+    </div>
+
+    <div class="row newrow">
+      <button class="expand-button" onclick="toggleweightButtons()">Weighing Scale</button>
+      <div class="Weight-button hidden">
+        <button onclick="calculate('bmi')">BMI</button>
+        <button>
+          <a href="bmichart.html" style="text-decoration: none; color: inherit;">BMI Chart</a>
+        </button>
+        
+        <button onclick="calculate('ftinmt')">Foot & Inch to Meter</button>
+        <button onclick="calculate('kggm')">Kg to gram</button>
+        <button onclick="calculate('gmkg')">gram to Kg</button>
+        <button onclick="calculate('kglbs')">Kg to lbs</button>
+        <button onclick="calculate('lbskg')">lbs to Kg</button>
+        <button onclick="calculate('lbsgm')">lbs to gram</button>
+        <button onclick="calculate('gmlbs')">gram to Lbs</button>
+      </div>
+    </div>
+    
+    <br><br><br>
+    <footer>
+      &copy; 2024 SANTOSH VISHWAKARMA. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
